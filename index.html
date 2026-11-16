@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>镜中的小雨 · 一场关于她的梦</title>
+<link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+
+<!-- 星空噪点遮罩 -->
+<div id="grain"></div>
+
+<!-- 场景视差多层 -->
+<div id="scenery"></div>
+<div id="scenery-far"></div>
+<div id="scenery-mid"></div>
+<div id="scenery-near"></div>
+<div id="scenery-light"></div>
+<div id="scene-trans"></div>
+
+<!-- 粒子画布 -->
+<canvas id="fx"></canvas>
+
+<!-- 月亮（部分场景显示） -->
+<div id="moon-wrap"><div id="moon"></div></div>
+
+<!-- 标题界面 -->
+<div id="title-screen">
+  <div class="title-bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <div class="title-box">
+    <div class="title-kicker">一个关于"成为自己"的交互故事</div>
+    <h1 id="title-main">镜中<span class="accent">的</span>小雨</h1>
+    <div class="title-sub">献给每一个在寻找自己的人</div>
+    <div class="title-content">
+      <div class="trig-wrap" id="trig-mini"></div>
+      <p class="title-tip">这个故事包含校园欺凌、抑郁与轻生念头等沉重内容，<br>但它同样包含温柔、星光，以及敢于活下去的勇气。</p>
+      <button class="btn begin-btn" id="btn-begin">
+        <span class="btn-spark">✦</span> 进入她的故事 <span class="btn-spark">✦</span>
+      </button>
+      <button class="btn mute-btn" id="btn-mute">🔈 音效：开</button>
+      <button class="btn mute-btn" id="btn-voice">🔊 语音：开</button>
+      <div class="help-line">若有需要，可拨打电话：心理援助热线 12356（中国）</div>
+    </div>
+  </div>
+</div>
+
+<!-- 主游戏舞台 -->
+<div id="stage" class="hidden">
+  <!-- 章节封面层 -->
+  <div id="chapter-cover"><div class="cc-inner">
+    <div class="cc-no" id="cc-no">第 〇 章</div>
+    <div class="cc-title" id="cc-title"></div>
+    <div class="cc-sub" id="cc-sub"></div>
+    <div class="cc-line"></div>
+  </div></div>
+
+  <!-- 角色立绘层 -->
+  <div id="char-layer"></div>
+
+  <!-- 互动浮层（小游戏等） -->
+  <div id="interact-layer"></div>
+
+  <!-- 文本舞台 -->
+  <div id="text-stage">
+    <div id="caption-area"></div>
+    <div id="dialogue-box">
+      <div id="dlg-name"></div>
+      <div id="dlg-heart" class="hidden">♥</div>
+      <div id="dlg-text"></div>
+      <div class="dlg-foot">
+        <div class="dlg-progress" id="dlg-progress"></div>
+        <div class="dlg-hint" id="dlg-hint">▼ 点击继续</div>
+      </div>
+    </div>
+    <div id="choice-box"></div>
+    <div id="input-box" class="hidden"><input id="text-input" type="text" maxlength="24" placeholder="">
+      <button id="text-ok" class="btn small">确定</button>
+    </div>
+  </div>
+
+  <!-- 情感值/章节槽 -->
+  <div id="hud">
+    <div id="hud-chapter"></div>
+    <div id="hud-feel">勇气 <b id="feel-val">0</b></div>
+  </div>
+</div>
+
+<!-- 结局页 -->
+<div id="ending-screen" class="hidden">
+  <div class="ending-bg"></div>
+  <div id="ending-title"></div>
+  <div id="ending-text"></div>
+  <div class="ending-actions">
+    <button class="btn" id="btn-restart">✦ 重新开始这一段梦</button>
+  </div>
+  <div class="help-line">若你正在经历痛苦，请一定寻求帮助：心理援助热线 12356</div>
+</div>
+
+<script src="js/characters.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/story.js"></script>
+<script src="js/engine.js?v=5"></script>
+</body>
+</html>
